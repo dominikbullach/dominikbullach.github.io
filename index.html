@@ -1,36 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <TITLE>Dominik Bullach</TITLE>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+        <meta charset="UTF-8">
+        <title>Dominik Bullach</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
 
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="StyleSheet.css">
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       </head>
-<body>
+<body id="top">
 
-    <div class="container" style="padding-top:50px" >
+    <header class="site-header">
+      <div class="container">
         <div class="row">
             <div class="col-sm-4">
-              <h3> Dominik Bullach </h3>
+              <h3 class="site-name">Dominik Bullach</h3>
+                <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Toggle navigation menu">
+                  <span></span><span></span><span></span>
+                </button>
             </div>
             <div class="col-sm-2">
             </div>
             <div class="col-sm">
-                <a class="active" href="index.html">Home</a>
-            
-                <a  href="#Research">Research</a>
-            <a  href="#Travel">Travel</a>
+                <nav class="nav-panel" id="nav-panel" aria-label="Sections">
+                <div class="nav-links">
+                <a href="#top">Home</a>
+                <a href="#Research">Publications</a>
+                <a href="#Travel">Travel</a>
+                <a href="#Events">Events</a>
                 <a href="#Contact">Contact</a>
+                </div>
+                </nav>
             </div>
           </div>
-        </div>
+      </div>
+    </header>
     <div class="container">
 
 
@@ -38,34 +42,36 @@
       <h6>About me</h6>
 
       I'm a postdoc (Juan de la Cierva Fellow) in the Number Theory group at <a href="https://www.icmat.es/">ICMAT</a>, Madrid.
-      <small>
-        <span class="btn-group">
-  <a class="btn btn-secondary btn-xs dropdown-toggle" data-toggle="collapse" href="#CV" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Short CV
-  </a>
-</span>
-</small> 
-<div class="collapse in" id="CV">
+        <button type="button" class="cv-toggle" aria-expanded="false" aria-controls="CV" onclick="var cv=document.getElementById('CV'); var show=cv.classList.toggle('show'); this.classList.toggle('open', show); this.setAttribute('aria-expanded', show);">Short CV <span class="cv-chevron" aria-hidden="true">&#9662;</span></button>
+<div id="CV">
+<div class="cv-inner">
 <ul>
-<li>2023 &ndash; 25: Postdoc (EPSCR Doctoral Prize Fellow) @ UCL</li>
+<li>2023 &ndash; 25: Postdoc (EPSRC Doctoral Prize Fellow) @ UCL</li>
 <li>2022 &ndash; 23: Postdoc @ King's College London</li>
 <li>2018 &ndash; 22: PhD @ <a href="http://www.lsgnt-cdt.ac.uk/">LSGNT</a> (with <a href="https://davidburnsmaths.github.io/" >
       David Burns</a> @ King's College London)</li>
-<li>2016 &ndash; 18: M Sc @ <a href="http://www.mathematik.uni-muenchen.de/~bullach/index_en.php/"> LMU Munich</a></li>
+<li>2016 &ndash; 18: MSc @ <a href="http://www.mathematik.uni-muenchen.de/~bullach/index_en.php/"> LMU Munich</a></li>
 </ul>
+</div>
 </div>
         
 
-      <br> <br>
+      <br>
       My primary mathematical interests are:
       <ul>
       <li>Special values of \(L\)-functions, particularly the Tamagawa Number Conjecture of Bloch and Kato and its equivariant refinement (the `eTNC').
       </li>
-	<li>Stark's conjecture and its integral refinements. 
+	<li>Stark's conjecture and its integral refinements.</li>
       <li>Euler systems</li>
       <li>Iwasawa theory
       </li>
       </ul>
+
+      <!-- Conference announcement: remove after April 2027 -->
+      <p class="announcement">
+        <strong>Upcoming conference:</strong> <br> <a href="https://www.icmat.es/congresos/2027/AGF/index.php">Arithmetic of global fields</a>,
+        12 &ndash; 16 April 2027, ICMAT, Madrid.
+      </p>
     </div>
          
         <div class="Content">
@@ -189,7 +195,7 @@
  </div>
 		
 
-      <div class="Content" id="Travel">
+      <div class="Content">
 
 		  <!--
         <h6>Upcoming research talks</h6>
@@ -197,10 +203,10 @@
 		
       </ul>
       <br> 
---!>
+-->
 
       
-      <h6>Past research talks</h6>
+      <h6 id="Travel">Past research talks</h6>
       <ul>
 		  <li><i>On Euler systems and Nekovář&ndash;Selmer complexes</i>, <a href="https://unidistance.ch/en/mathematics-and-computer-science/event/number-theory-seminar-dominik-bullach">Number theory seminar</a>, FernUni Schweiz (online), 2 December 2025.</li>
 <li><i>On Euler systems and the equivariant Tamagawa Number Conjecture</i>, Mini-workshop on Algebraic Number Theory, Keio University, Tokyo, 7 July 2025.</li>
@@ -208,7 +214,7 @@
 <li><i>On the refined `Birch&ndash;Swinnerton-Dyer type’ conjectures of Mazur and Tate</i>, <a href="https://dmzb.github.io/FCNTS.html">Five College Number Theory Seminar</a>, Amherst (MA), 25 March 2025.
 	</li>
 <li><i>On leading terms of \(L\)-series and Euler systems</i>, mini-course at the conference <a href="https://nt2024.unibw.de/index.html"><i>Algebraic Number Theory &ndash; a workshop for young researchers</i></a>, Universität der Bundeswehr München, 2 &ndash; 6 September 2024. </li>
-<li><i>On the refined `Birch&ndash;Swinnerton-Dyer type’ conjectures of Mazur and Tate</i>, <a href="https://sites.google.com/view/sugimoto-algebra-seminar/home?authuser=0">Sugimoto Algebra Seminar</a>, Osaka Metropolitan University, 19 July 2024.
+<li><i>On the refined `Birch&ndash;Swinnerton-Dyer type’ conjectures of Mazur and Tate</i>, <a href="https://sites.google.com/view/sugimoto-algebra-seminar/home?authuser=0">Sugimoto Algebra Seminar</a>, Osaka Metropolitan University, 19 July 2024.</li>
 <li><i>On the refined `Birch&ndash;Swinnerton-Dyer type’ conjectures of Mazur and Tate</i>, <a href="https://www.icms.org.uk/Hilberts12th">Recent progress on Hilbert's 12th problem</a>, International Centre for Mathematical Sciences, Edinburgh, 24 &ndash; 28 June 2024.</li>
 <li><i>On some recent developments in the theory of Euler systems</i>, London Number Theory Seminar, 17 January 2024.</li>
 <li><i>Euler systems and refined conjectures of Birch and Swinnerton-Dyer type</i>, Algebra, Arithmetic and their Geometries seminar, Nottingham, 6 December 2023.</li>
@@ -223,7 +229,7 @@
           <li><i>Cyclotomic units and the scarcity of Euler systems</i>, Number Theory Seminar, Yonsei University, Seoul, 26 July 2022</li>
           <li><i>Dirichlet \(L\)-series at \(s = 0 \) and the scarcity of Euler systems</i>, Oberseminar Arithmetische und Algebraische Geometrie, LMU Munich, 12 July 2022</li>
       <li><i>Cyclotomic units and the scarcity of Euler systems</i>, Algebra and Number Theory Seminar, University College Dublin, 25 May 2022</li>
-          <li><i>Dirichlet \(L\)-series at \(s = 0 \) and the scarcity of Euler systems</i>, Number Theory Seminar at Universit&agrave degli Studi, Padova, 12 May 2022</li>
+          <li><i>Dirichlet \(L\)-series at \(s = 0 \) and the scarcity of Euler systems</i>, Number Theory Seminar at Universit&agrave; degli Studi, Padova, 12 May 2022</li>
       <li><i>Dirichlet \(L\)-series at \(s = 0 \) and the scarcity of Euler systems</i>, Algebra and Number Theory seminar, Exeter, 17 March 2022</li>
       <li><i>Dirichlet \(L\)-series at \(s = 0 \) and the scarcity of Euler systems</i>, Oberseminar Algebraische Geometrie und Arithmetik, Essen, 25 November 2021</li>
       <li><i>Dirichlet \(L\)-series at \(s = 0 \) and the scarcity of Euler systems</i>, ICMAT Number Theory Seminar, Madrid, 15 November 2021</li>
@@ -237,8 +243,10 @@
       </div>
       
       <div class="Content">
-        <h6>Events organised</h6>
+        <h6 id="Events">Events organised</h6>
       <ul>
+	<li>I am on the organising committee of the conference `arithmetic of global fields', 12 &ndash; 16 April 2027 at ICMAT in Madrid. The conference webpage, including the list of speakers and the registration form, can be found <a href="https://www.icmat.es/congresos/2027/AGF/index.php">here</a>.
+	</li>
 	<li>Jointly with <a href="https://www.ucl.ac.uk/~ucahljg/index.htm">Luis García</a>, I organised the London number theory seminar in the 2025 spring term. For more information on the seminar, including the schedule, see <a href="https://researchseminars.org/seminar/LNTS">here</a>.
 	</li>
 	<li>
@@ -286,5 +294,118 @@
       <div class="Content">
       </div>
 
+<script>
+  (function () {
+    var header   = document.querySelector('.site-header');
+    var toggle   = document.querySelector('.nav-toggle');
+    var panel    = document.getElementById('nav-panel');
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+    var sectionIds = ['Research', 'Travel', 'Events', 'Contact'];
+    var GAP = 16;          // space between the bottom of the menu bar and a section heading
+    var current = null;    // section currently highlighted in the menu
+    var lockedTo = null;   // set while a menu click is scrolling the page
+
+    // Distance from the top of the window at which a section heading should end up
+    function offset() {
+      return header.getBoundingClientRect().height + GAP;
+    }
+    // Same offset for links that arrive with a #hash in the address
+    function setScrollPadding() {
+      document.documentElement.style.scrollPaddingTop = offset() + 'px';
+    }
+
+    /* ---- Header: hairline once the page is scrolled ---- */
+    function updateHeader() {
+      var stuck = header.getBoundingClientRect().top <= 0.5;
+      header.classList.toggle('scrolled', stuck && window.scrollY > 1);
+    }
+
+    /* ---- Mobile menu ---- */
+    function setMenu(open) {
+      panel.classList.toggle('open', open);
+      toggle.classList.toggle('open', open);
+      header.classList.toggle('menu-open', open);
+      toggle.setAttribute('aria-expanded', open);
+    }
+    toggle.addEventListener('click', function () {
+      setMenu(!panel.classList.contains('open'));
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setMenu(false);
+    });
+    document.addEventListener('click', function (e) {
+      if (panel.classList.contains('open') && !header.contains(e.target)) setMenu(false);
+    });
+
+    /* ---- Highlight the menu link of the section in view ---- */
+    function setActive(id) {
+      if (id === current) return;
+      current = id;
+      navLinks.forEach(function (a) {
+        var on = a.getAttribute('href') === '#' + id;
+        a.classList.toggle('active', on);
+        if (on) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+    }
+    function sectionInView() {
+      var line = window.scrollY + offset() + 4;
+      var id = 'top';
+      sectionIds.forEach(function (s) {
+        var el = document.getElementById(s);
+        if (el && el.getBoundingClientRect().top + window.scrollY <= line) id = s;
+      });
+      var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      if (atBottom) id = sectionIds[sectionIds.length - 1];
+      return id;
+    }
+
+    /* ---- Menu clicks: scroll so the heading sits just below the menu bar ---- */
+    navLinks.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var id = a.getAttribute('href').slice(1);
+        var target = id === 'top' ? null : document.getElementById(id);
+        e.preventDefault();
+        setMenu(false);
+        var y = target ? target.getBoundingClientRect().top + window.scrollY - offset() : 0;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        history.replaceState(null, '', id === 'top' ? location.pathname + location.search : '#' + id);
+        // Keep the clicked link highlighted until the reader scrolls by hand,
+        // instead of stepping through every section on the way
+        lockedTo = id;
+        setActive(id);
+      });
+    });
+    function unlock() {
+      if (!lockedTo) return;
+      lockedTo = null;
+      setActive(sectionInView());
+    }
+    ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (type) {
+      window.addEventListener(type, unlock, { passive: true });
+    });
+
+    /* ---- Scroll and resize ---- */
+    var ticking = false;
+    function onScroll() {
+      updateHeader();
+      if (!lockedTo) setActive(sectionInView());
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(onScroll);
+      }
+    }, { passive: true });
+    window.addEventListener('resize', function () {
+      setScrollPadding();
+      if (window.innerWidth > 768) setMenu(false);
+    });
+
+    setScrollPadding();
+    onScroll();
+  })();
+</script>
 </body>
 </html>
